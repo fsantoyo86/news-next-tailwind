@@ -9,7 +9,7 @@ export const Feed = ({pageNumber, articles}) => {
   return (
     <>
       <div className="page-container">
-          <Toolbar></Toolbar>
+        <Toolbar></Toolbar>
         <div className={styles.main}>
           {articles.map((article, index) => (
             <div key={index} className={styles.post}>
@@ -18,6 +18,12 @@ export const Feed = ({pageNumber, articles}) => {
               </h1>
               <p>{article.description}</p>
               {!!article.urlToImage && <img src={article.urlToImage} />}
+              <button
+                onClick={() => (window.location.href = article.url)}
+                 className={styles.btnLeer}
+              >
+                Leer más ...{" "}
+              </button>
             </div>
           ))}
         </div>

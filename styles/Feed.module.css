@@ -40,3 +40,20 @@
     cursor:not-allowed;
     color: rgb(179,179,179);
 }
+
+.btnLeer{
+    background-color: rgb(231, 87, 87);
+    border: none;
+    color:white;
+    padding: 10px 25px;
+    text-align:center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-top: 4px;
+    cursor:pointer;
+}
+.btnLeer:hover {
+    background-color:rgb(182, 78, 78) ;
+}

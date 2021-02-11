@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+
 .main{
   flex:1;
   display: flex;
@@ -8,4 +10,11 @@
 
 .main h1{
   margin-top: -50px;
+  font-family: 'UnifrakturCook', cursive;
+  font-size: 90px;
+}
+
+.main h3{
+  font-family:'UnifrakturCook', cursive ;
+  font-size: 25px;
 }

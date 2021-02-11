@@ -14,7 +14,7 @@ export const Toolbar =()=>{
           Feed
         </div>
         <div className="" onClick={() => router.push("/eom")}>
-          EOM
+          About Us
         </div>
         <div className="" onClick={() => window.location.href='https://twitter.com'}>
           Twitter

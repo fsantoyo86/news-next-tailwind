@@ -8,8 +8,8 @@ export default function Home() {
    <div className="page-container">
      <Toolbar></Toolbar>
      <div className={styles.main}>
-       <h1>Next.js New App</h1>
-       <h3>Your one stop shop for the latest news articles</h3>
+       <h1>News at every minute</h1>
+       <h3>The latest events at one click away</h3>
      </div>
    </div>
    </>
