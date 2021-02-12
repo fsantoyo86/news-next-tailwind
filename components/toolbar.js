@@ -1,23 +1,40 @@
 import {useRouter} from 'next/router';
-import styles from '../styles/Toolbar.module.css';
 
 
 export const Toolbar =()=>{
     const router = useRouter();
 
     return (
-      <div className={styles.main}>
-        <div className="" onClick={() => router.push("/")}>
+      <div className="flex flex-wrap p-3 justify-center text-lg ">
+        <div
+          className="mx-4 cursor-pointer hover:text-gray-400"
+          onClick={() => router.push("/")}
+        >
           Home
         </div>
-        <div className="" onClick={() => router.push("/feed/1")}>
-          Feed
+        <div
+          className="mx-4 cursor-pointer hover:text-gray-400"
+          onClick={() => router.push("/feed/1")}
+        >
+          News
         </div>
-        <div className="" onClick={() => router.push("/eom")}>
+        <div
+          className="mx-4 cursor-pointer hover:text-gray-400"
+          onClick={() => router.push("/eom")}
+        >
           About Us
         </div>
-        <div className="" onClick={() => window.location.href='https://twitter.com'}>
+        <div
+          className="mx-4 cursor-pointer hover:text-gray-400"
+          onClick={() => (window.location.href = "https://twitter.com")}
+        >
           Twitter
+        </div>
+        <div
+          className="mx-4 cursor-pointer hover:text-gray-400"
+          onClick={() => (window.location.href = "https://facebook.com")}
+        >
+          Facebook
         </div>
       </div>
     );

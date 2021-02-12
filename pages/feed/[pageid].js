@@ -1,4 +1,3 @@
-import styles from '../../styles/Feed.module.css';
 import {useRouter} from 'next/router';
 import { Toolbar } from "../../components/toolbar";
 
@@ -8,28 +7,40 @@ export const Feed = ({pageNumber, articles}) => {
 
   return (
     <>
-      <div className="page-container">
+      <div className="flex grid grid-rows-10">
         <Toolbar></Toolbar>
-        <div className={styles.main}>
+        <div className="flex flex-wrap justify-items-center">
           {articles.map((article, index) => (
-            <div key={index} className={styles.post}>
-              <h1 onClick={() => (window.location.href = article.url)}>
+            <div
+              key={index}
+              className="flex flex-wrap justify-center mx-5 my-3"
+            >
+              <h1
+                className="font-bold text-2xl font-new"
+                onClick={() => (window.location.href = article.url)}
+              >
                 {article.title}
               </h1>
-              <p>{article.description}</p>
-              {!!article.urlToImage && <img src={article.urlToImage} />}
+              <p className="mt-1">{article.description}</p>
+              {!!article.urlToImage && (
+                <img className="w-auto mt-1" src={article.urlToImage} />
+              )}
               <button
                 onClick={() => (window.location.href = article.url)}
-                 className={styles.btnLeer}
+                className="mt-2 p-2 text-gray-100 hover:bg-red-600 rounded-lg bg-red-500"
               >
-                Leer más ...{" "}
+                Read more ...
               </button>
             </div>
           ))}
         </div>
-        <div className={styles.paginator}>
+        <div className="flex flex-wrap justify-center text-white m-2 mb-5">
           <div
-            className={pageNumber === 1 ? styles.disabled : styles.active}
+            className={
+              pageNumber === 1
+                ? "hidden"
+                : "flex flex-wrap p-2 rounded-md bg-blue-400 cursor-pointer hover:bg-blue-500"
+            }
             onClick={() => {
               if (pageNumber > 1) {
                 router
@@ -38,12 +49,31 @@ export const Feed = ({pageNumber, articles}) => {
               }
             }}
           >
-            {" "}
-            Previous Page
+            <svg
+              class="mt-1 mr-2 w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M11 19l-7-7 7-7m8 14l-7-7 7-7"
+              ></path>
+            </svg>{" "}
+            Previous
           </div>
-          <div>#{pageNumber}</div>
+          <div className="p-2 font-bold text-xl text-blue-500 mx-3">
+            #{pageNumber}
+          </div>
           <div
-            className={pageNumber === 5 ? styles.disabled : styles.active}
+            className={
+              pageNumber === 5
+                ? "hidden"
+                : "flex flex-wrap p-2 px-4 rounded-md bg-blue-400 cursor-pointer hover:bg-blue-500"
+            }
             onClick={() => {
               if (pageNumber < 5) {
                 router
@@ -52,7 +82,21 @@ export const Feed = ({pageNumber, articles}) => {
               }
             }}
           >
-            Next Page
+            Next{" "}
+            <svg
+              class="mt-1 ml-2 w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 5l7 7-7 7M5 5l7 7-7 7"
+              ></path>
+            </svg>
           </div>
         </div>
       </div>
